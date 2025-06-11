@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -8,15 +9,15 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} QuizFlare. All rights reserved.
         </p>
         <div className="flex justify-center space-x-6 mt-4">
-          <a href="/privacy-policy" className="hover:text-gray-400 text-sm">
+          <Link to="/privacy-policy" className="hover:text-gray-400 text-sm">
             Privacy Policy
-          </a>
-          <a href="/terms-of-service" className="hover:text-gray-400 text-sm">
+          </Link>
+          <Link to="/terms-of-service" className="hover:text-gray-400 text-sm">
             Terms of Service
-          </a>
-          <a href="/contact" className="hover:text-gray-400 text-sm">
+          </Link>
+          <Link to="/contact" className="hover:text-gray-400 text-sm">
             Contact Us
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

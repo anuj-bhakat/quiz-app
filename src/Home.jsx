@@ -1,30 +1,41 @@
-
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
+  const [name, setName] = useState('');
+  const navigate = useNavigate();
+
+  const handleStartQuiz = () => {
+    if (name.trim()) {
+      // Pass the name state when navigating to /quizzes
+      navigate('/quizzes', { state: { name } });
+    } else {
+      alert('Please enter your name to start the quiz.');
+    }
+  };
+
   return (
-    <div className="bg-gradient-to-r from-blue-500 to-purple-600 min-h-screen flex items-center justify-center text-white">
-      <div className="text-center p-6 md:p-12 bg-opacity-75 bg-black rounded-lg shadow-lg w-full max-w-lg">
-        <h1 className="text-5xl font-bold mb-4 leading-tight">
-          Welcome to <span className="text-yellow-400">QuizFlare</span>
-        </h1>
-        <p className="text-xl mb-6">
-          Test your knowledge with a wide variety of quizzes, track your progress, and compete on the leaderboard.
-        </p>
-        <Link to="/quiz">
-          <button className="bg-yellow-400 text-black py-3 px-8 rounded-lg text-xl font-semibold hover:bg-yellow-500 transition duration-300">
-            Start Quiz
-          </button>
-        </Link>
-        <div className="mt-8">
-          <p className="text-sm text-gray-300">
-            Or check out your progress on the leaderboard and challenge yourself even more!
-          </p>
-        </div>
+    <div className="flex flex-col items-center justify-center h-[77vh] bg-gray-100 px-4">
+      <div className="bg-white shadow-md rounded-lg p-8 max-w-md w-full text-center">
+        <h1 className="text-2xl font-bold mb-6 text-gray-800">Welcome to the Quiz</h1>
+
+        <input
+          type="text"
+          placeholder="Enter your name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+        />
+
+        <button
+          onClick={handleStartQuiz}
+          className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition-colors"
+        >
+          Start Quiz
+        </button>
       </div>
     </div>
   );
-};
+}
 
 export default Home;
