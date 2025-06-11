@@ -8,15 +8,15 @@ function Leaderboard() {
     // Sort results by score (descending), and by time (ascending) if scores are the same
     storedResults.sort((a, b) => {
       if (b.score === a.score) {
-        return a.totalTime - b.totalTime; // faster time wins tie
+        return a.totalTime - b.totalTime;
       }
-      return b.score - a.score; // higher score first
+      return b.score - a.score;
     });
     setResults(storedResults);
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[77vh] bg-gradient-to-r from-indigo-500 to-purple-500 py-8">
+    <div className="flex flex-col items-center justify-center min-h-[77.25vh] bg-gradient-to-r from-indigo-500 to-purple-500 py-8">
       <div className="bg-white shadow-lg rounded-lg p-8 max-w-4xl w-full">
         <h1 className="text-3xl font-semibold text-center text-gray-900 mb-6">Leaderboard</h1>
 

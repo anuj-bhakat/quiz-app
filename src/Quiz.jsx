@@ -95,7 +95,7 @@ function Quiz() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-[77vh] bg-gray-50 px-4">
+    <div className="flex flex-col items-center justify-center h-[77.25vh] px-4 bg-gradient-to-r from-indigo-500 to-purple-500">
       <div className="bg-white shadow-md rounded-lg p-8 max-w-md w-full text-center">
         {!showScore && (
           <p className="mb-4 text-lg font-semibold text-gray-700">Player: {name}</p>

@@ -12,7 +12,7 @@ function Quizzes() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4 py-8">
+    <div className="flex flex-col items-center justify-center min-h-[77.25vh] px-4 py-8 bg-gradient-to-r from-indigo-500 to-purple-500">
       <div className="bg-white shadow-xl rounded-xl p-8 max-w-4xl w-full text-center">
         <h2 className="text-3xl font-semibold mb-8 text-gray-800">Choose a Quiz</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
